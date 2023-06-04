@@ -11,16 +11,17 @@ function App() {
   const [ puppers, setPuppers ] = useState( [] )
 
   function getPuppers() {
-    axios.get( "/api" )
-      .then( res => setPuppers( res.data ) )
-      .catch( err => console.log( err.response.data.errMsg ) )
+    axios.get( "/api/dogs" )
+      .then( res => setPuppers(res.data) ) 
+      .catch( err => console.log( 'err.response.data.errMsg ') )
 }
+
 
   useEffect( () => {
     getPuppers()
   }, [] )
 
-  console.log(puppers)
+  // console.log(puppers)
 
   return (
     <>
