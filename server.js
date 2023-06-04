@@ -1,12 +1,8 @@
 const express = require('express')
 const app = express()
-
+const morgan = require('morgan')
 const mongoose = require('mongoose')
 mongoose.set('strictQuery', true)
-
-const morgan = require('morgan')
-
-
 
 const PORT = 9000
 
@@ -14,11 +10,11 @@ const PORT = 9000
 app.use(express.json())
 app.use(morgan('dev'))
 
-app.get('/', (req, res, next) => {
-    res.send(
-        'Welcome to the Homepage'
-    )
-})
+// error handler
+app.use( ( err, req, res, next ) => {
+    console.log( err )
+    return res.send( { errMsg: err.message } )
+} )
 
 app.use('/dogs', require('./routes/canineRouter'))
 
