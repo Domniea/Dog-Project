@@ -22,7 +22,7 @@ app.get('/', (req, res, next) => {
 
 app.use('/dogs', require('./routes/canineRouter'))
 
-mongoose.connect('mongodb://127.0.0.1:27017/dogApp', () => {
+mongoose.connect('mongodb+srv://domniea:password666@cluster0.ra81jxs.mongodb.net/group-project-dogs?retryWrites=true&w=majority', () => {
     console.log('Connected to DB')
 })
 
