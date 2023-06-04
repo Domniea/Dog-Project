@@ -1,0 +1,27 @@
+{
+  "name": "dog-project",
+  "version": "1.0.0",
+  "description": "Level 5 Group Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Domniea/Dog-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Domniea/Dog-Project/issues"
+  },
+  "homepage": "https://github.com/Domniea/Dog-Project#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^5.6.0",
+    "mongoose": "^7.2.2",
+    "morgan": "^1.10.0"
+  }
+}
