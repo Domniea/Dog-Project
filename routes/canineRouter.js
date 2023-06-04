@@ -8,7 +8,7 @@ canineRouter.get('/', ( req, res, next) => {
     Canine.find((err, allData) => {
         if(err){
             res.sendStatus(500)
-            return next(200)
+            return next( err )
         }
         return res.status(200).send(allData)
     })

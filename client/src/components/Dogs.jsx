@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 
 
 function Dogs( props ) {
+    console.log(props)
     const puppers = props.map( pupper => (
         <h3 key={props._id}>
             {props.name}
         </h3>
     ) )
-
     return (
         <>
             <div className="Dogs">
