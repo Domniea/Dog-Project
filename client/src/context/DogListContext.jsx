@@ -7,7 +7,6 @@ const DogList = createContext()
 
 function DogListProvider (props) {
     const [canineList, setCanineList] = useState([])
-
     function getAllDogs() {
         axios.get('/api/dogs')
             .then(res => setCanineList(res.data))
@@ -17,10 +16,10 @@ function DogListProvider (props) {
     useEffect(() => {
         getAllDogs()
     }, [])
- 
+
     return (
         <DogList.Provider value={canineList}>
-            {props.childern}
+            {props.children}
         </DogList.Provider>
     )
 }

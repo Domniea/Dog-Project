@@ -6,9 +6,11 @@ import App from './App.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-
-    <Router>
-      <App />
-    </Router>
+      <Router>
+        <DogListProvider>
+          <App />
+        </DogListProvider>
+      </Router>
+    
 
 )

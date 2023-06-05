@@ -1,24 +1,31 @@
 import React, { useState, useContext } from 'react'
 import { DogList } from '../context/DogListContext'
+import DogCard from './DogCard'
+import SubmitDogForm from './SubmitDogForm'
 
 
 function Dogs( props ) {
+    const canineList = useContext(DogList)
+    
+    console.log(canineList)
 
-    // const dogs = useContext(DogList)
+    const puppers = canineList.map( pupper => {
+        return <DogCard 
+            key={pupper._id}
+            {...pupper}
+        />
+    })
 
-    // console.log(dogs)
-    // const puppers = props.map( pupper => (
-    //     <h3 key={props._id}>
-    //         {props.name}
-    //     </h3>
-    // ) )
-    // console.log(props)
+
+
+
     return (
         <>
             <div className="Dogs">
                 <h1>Dogs Test</h1>
+                <SubmitDogForm />
             </div>
-            {/* { puppers } */}
+            { puppers }
         </>
     )
 }
