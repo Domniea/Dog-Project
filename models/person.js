@@ -1,13 +1,10 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const canineSchema = new Schema({
+const personSchema = new Schema({
   name: {
     type: String,
     required: true,
-  },
-  breed: {
-    type: String,
   },
   age: {
     type: String,
@@ -15,6 +12,9 @@ const canineSchema = new Schema({
   rating: {
     type: Number,
   },
+  contact: {
+    type: Number,
+  },
 });
 
-module.exports = mongoose.model("Canine", canineSchema);
+module.exports = mongoose.model("Person", personSchema);
