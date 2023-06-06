@@ -19,7 +19,7 @@ function DogListProvider (props) {
     }, [])
 
     return (
-        <DogList.Provider value={canineList}>
+        <DogList.Provider value={ { canineList, setCanineList } }>
             {props.children}
         </DogList.Provider>
     )
