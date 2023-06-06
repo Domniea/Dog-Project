@@ -7,6 +7,7 @@ const DogList = createContext()
 
 function DogListProvider (props) {
     const [canineList, setCanineList] = useState([])
+    
     function getAllDogs() {
         axios.get('/api/dogs')
             .then(res => setCanineList(res.data))
