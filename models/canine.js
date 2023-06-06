@@ -13,6 +13,10 @@ const canineSchema = new Schema({
     },
     rating: {
         type: Number
+    },
+    walkDays: {
+        type: String,
+        enum: [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ]
     }
 })
 
