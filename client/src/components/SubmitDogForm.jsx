@@ -1,8 +1,8 @@
-import React from "react";
+
 import { useState } from "react";
 import axios from "axios";
 
-function SubmitDogForm(props) {
+function SubmitDogForm() {
     const initInputs ={
         name: '',
         breed: '',
