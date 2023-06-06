@@ -7,7 +7,8 @@ function SubmitDogForm() {
         name: '',
         breed: '',
         age: '',
-        rating: ''
+        rating: '',
+        walkDays: ""
     }
 
     const [inputs, setInputs] = useState(initInputs)
@@ -42,28 +43,35 @@ function SubmitDogForm() {
                         name="name" 
                         value={inputs.name}
                         onChange={handleChange}
-                        placeholder=""
+                        placeholder="Dog's Name"
                     />
                     <input 
                         type="text" 
                         name="breed" 
                         value={inputs.breed}
                         onChange={handleChange}
-                        placeholder=""
+                        placeholder="Dog's Breed"
                     />
                     <input 
                         type="text" 
                         name="age" 
                         value={inputs.age}
                         onChange={handleChange}
-                        placeholder=""
+                        placeholder="Dog's Age"
                     />
                     <input 
                         type="text" 
                         name="rating" 
                         value={inputs.rating}
                         onChange={handleChange}
-                        placeholder=""
+                        placeholder="About your dog!"
+                    />
+                    <input 
+                        type="text" 
+                        name="walkDays" 
+                        value={inputs.walkDays}
+                        onChange={handleChange}
+                        placeholder="Day to walk your dog"
                     />
                     <button>Submit</button>
                 </form>
