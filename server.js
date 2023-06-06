@@ -1,27 +1,27 @@
-const express = require('express')
-const app = express()
-const morgan = require('morgan')
-const mongoose = require('mongoose')
-mongoose.set('strictQuery', true)
-
-const PORT = 9000
+const express = require("express");
+const app = express();
+const morgan = require("morgan");
+const mongoose = require("mongoose");
+mongoose.set("strictQuery", true);
+require("dotenv").config(); // Angie added .env to hide port and URL and password
 
 //Middleware
-app.use(express.json())
-app.use(morgan('dev'))
+app.use(express.json());
+app.use(morgan("dev"));
 
 // error handler
-app.use( ( err, req, res, next ) => {
-    console.log( err )
-    return res.send( { errMsg: err.message } )
-} )
+app.use((err, req, res, next) => {
+  console.log(err);
+  return res.send({ errMsg: err.message });
+});
 
-app.use('/dogs', require('./routes/canineRouter'))
+app.use("/dogs", require("./routes/canineRouter"));
+app.use("/walker", require("./routes/personRouter"));
 
-mongoose.connect('mongodb+srv://domniea:password666@cluster0.ra81jxs.mongodb.net/group-project-dogs?retryWrites=true&w=majority', () => {
-    console.log('Connected to DB')
-})
+mongoose.connect(process.env.MONGO_URL, () => {
+  console.log("Connected to DB");
+});
 
-app.listen(PORT, () => {
-    console.log(`Server is active on port: ${PORT}`)
-})
+app.listen(process.env.PORT, () => {
+  console.log(`Server is active on port: ${process.env.PORT}`);
+});

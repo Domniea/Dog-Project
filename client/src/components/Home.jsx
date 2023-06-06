@@ -1,4 +1,6 @@
 import React from 'react'
+import SubmitWalker from './SubmitWalker'
+
 
 
 function Home() {
@@ -6,6 +8,8 @@ function Home() {
         <>
             <div className="Home">
                 <h1>Home Test</h1>
+                <SubmitWalker />
+
             </div>
         </>
     )

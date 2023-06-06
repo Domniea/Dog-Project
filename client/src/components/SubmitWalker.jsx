@@ -1,13 +1,12 @@
+import {useState} from 'react'
+import axios from 'axios'
 
-import { useState } from "react";
-import axios from "axios";
-
-function SubmitDogForm() {
+const SubmitWalker = () => {
     const initInputs ={
         name: '',
-        breed: '',
         age: '',
-        rating: ''
+        rating: '',
+        contact: ''
     }
 
     const [inputs, setInputs] = useState(initInputs)
@@ -25,7 +24,7 @@ function SubmitDogForm() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        axios.post('/api/dogs', inputs)
+        axios.post('/api/walker', inputs)
             .then(res => console.log(res))
             .catch(err => console.log(err))
         console.log('Submitted')
@@ -35,35 +34,35 @@ function SubmitDogForm() {
 
     return (
         <>
-            <div className="DogForm">
+            <div className="WalkerForm">
                 <form onSubmit={handleSubmit}>
                     <input 
                         type="text" 
                         name="name" 
                         value={inputs.name}
                         onChange={handleChange}
-                        placeholder=""
-                    />
-                    <input 
-                        type="text" 
-                        name="breed" 
-                        value={inputs.breed}
-                        onChange={handleChange}
-                        placeholder=""
+                        placeholder="Name"
                     />
                     <input 
                         type="text" 
                         name="age" 
                         value={inputs.age}
                         onChange={handleChange}
-                        placeholder=""
+                        placeholder="Age"
                     />
                     <input 
                         type="text" 
                         name="rating" 
                         value={inputs.rating}
                         onChange={handleChange}
-                        placeholder=""
+                        placeholder="Ratings"
+                    /> 
+                    <input 
+                        type="text" 
+                        name="contact" 
+                        value={inputs.contact}
+                        onChange={handleChange}
+                        placeholder="Contact"
                     />
                     <button>Submit</button>
                 </form>
@@ -72,5 +71,7 @@ function SubmitDogForm() {
         </>
     )
 } 
+  
 
-export default SubmitDogForm
+
+export default SubmitWalker
