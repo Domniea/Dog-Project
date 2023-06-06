@@ -5,7 +5,7 @@ import './App.css'
 import Dogs from './components/Dogs'
 import DogWalkers from './components/DogWalkers'
 import axios from "axios"
-
+import Nav from './components/Nav'
 
 
 function App() {
@@ -27,12 +27,12 @@ function App() {
 
   return (
     <>
-    
+      <Nav />
+
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/dogs' element= { <Dogs /> } />
         <Route path='/dogwalkers' element= { <DogWalkers /> } />
-        
       </Routes>
       
     </>
