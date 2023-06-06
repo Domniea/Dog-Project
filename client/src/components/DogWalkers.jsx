@@ -6,9 +6,9 @@ import SubmitWalker from './SubmitWalker'
 
 function DogWalkers( props ) {
     
-    const canineList = useContext(DogList)
+    const dogs = useContext(DogList)
 
-    const puppers = canineList.map( pupper => {
+    const puppers = dogs.canineList.map( pupper => {
         return <DogCard 
         key={pupper._id}
         {...pupper}
@@ -18,14 +18,9 @@ function DogWalkers( props ) {
 
 
     function handleFilter( e ) {
-        if( e.target.value === 'reset' ) {
-            console.log(canineList)
-        } else {
-            console.log(e.target.value)
-            axios.get( `/api/dogs/search/walkDays?walkDays=${e.target.value}` )
-                .then( res => setCanineList( res.data ) )
-                .catch( err => console.log( err ) ) 
-        }
+            axios.get( `/api/dogs/search/walkdays?walkDays=${e.target.value}` )
+            .then( res => canineList.setCanineList( res.data ) )
+            .catch( err => console.log( err ) )
     }
 
     return (

@@ -68,6 +68,15 @@ canineRouter.delete('/:dogId', (req, res, next) => {
     })
 })
 
-
+// GET by walkDays
+canineRouter.get( "/search/walkdays", ( req, res, next ) => {
+    Canine.find( { walkDays: req.query.walkDays }, ( err, canines ) => {
+        if( err ) {
+            res.status( 500 )
+            return next( err )
+        }
+        return res.status( 200 ).send( canines )
+    } )
+} )
 
 module.exports = canineRouter

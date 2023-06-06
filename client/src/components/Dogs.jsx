@@ -5,11 +5,11 @@ import SubmitDogForm from './SubmitDogForm'
 
 
 function Dogs( props ) {
-    const canineList = useContext(DogList)
+    const dogs = useContext(DogList)
     
-    console.log(canineList)
+    console.log(dogs)
 
-    const puppers = canineList.map( pupper => {
+    const puppers = dogs.canineList.map( pupper => {
         return <DogCard 
             key={pupper._id}
             {...pupper}
