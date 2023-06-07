@@ -27,12 +27,14 @@ function DogWalkers( props ) {
         <>
             <div className="DogWalkers">
 
-                <h1>List of Dogs that Need to be Walked</h1>
+            <header className="header">
+                <h1>Dogs that need walked</h1> 
+            </header>
 
                 <SubmitWalker />
 
-                <h4>Filter by Walk Days</h4>
-                <select onChange={handleFilter}>
+                <h4 className="filterTitle">Filter by Walk Days</h4>
+                <select className="filter-form" onChange={handleFilter}>
                     <option value="reset">All Dogs</option>
                     <option value="Monday">Monday</option>
                     <option value="Tuesday">Tuesday</option>
