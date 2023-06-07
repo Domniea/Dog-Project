@@ -22,7 +22,9 @@ function Dogs( props ) {
     return (
         <>
             <div className="Dogs">
-                <h1>List of Adorable Dogs</h1>
+                <header className="header">
+                    <h1>List of Adorable Dogs</h1>
+                </header>
                 <SubmitDogForm />
             </div>
             { puppers }
