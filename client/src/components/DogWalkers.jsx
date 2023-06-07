@@ -18,9 +18,13 @@ function DogWalkers( props ) {
 
 
     function handleFilter( e ) {
+        if( e.target.value === "reset" ) {
+            dogs.getAllDogs()
+        } else { 
             axios.get( `/api/dogs/search/walkdays?walkDays=${e.target.value}` )
-            .then( res => dogs.setCanineList( res.data ) )
-            .catch( err => console.log( err ) )
+                .then( res => dogs.setCanineList( res.data ) )
+                .catch( err => console.log( err ) )
+        }
     }
 
     return (
@@ -34,7 +38,7 @@ function DogWalkers( props ) {
                 <SubmitWalker />
 
                 <h4 className="filterTitle">Filter by Walk Days</h4>
-                <select className="filter-form" onChange={handleFilter}>
+                <select className="filter-form" onChange={ handleFilter }>
                     <option value="reset">All Dogs</option>
                     <option value="Monday">Monday</option>
                     <option value="Tuesday">Tuesday</option>
