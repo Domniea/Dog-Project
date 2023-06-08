@@ -53,7 +53,7 @@ function Dogs( props ) {
         <>
             <div className="Dogs">
                 <header className="header">
-                    <h1>List of Adorable Dogs</h1>
+                    <h1>List of Adorable Dogs to Walk</h1>
                 </header>
                 <SubmitDogForm 
                     submit={postPupper}
