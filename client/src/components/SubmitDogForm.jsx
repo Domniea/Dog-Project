@@ -13,7 +13,8 @@ function SubmitDogForm(props) {
         breed: props.breed || '',
         age: props.age || '',
         rating: props.rating || '',
-        walkDays: props.walkDays || ""
+        walkDays: props.walkDays || "",
+        imgUrl: ''
     }
 
     const [inputs, setInputs] = useState(initInputs)
@@ -78,6 +79,13 @@ function SubmitDogForm(props) {
                         value={inputs.walkDays}
                         onChange={handleChange}
                         placeholder="Day to walk your dog"
+                    />
+                    <input 
+                        type="text" 
+                        name="imgUrl" 
+                        value={inputs.imgUrl}
+                        onChange={handleChange}
+                        placeholder="Image Url"
                     />
                     <button>Submit</button>
                     
