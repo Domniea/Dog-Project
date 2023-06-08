@@ -16,7 +16,7 @@ app.use((err, req, res, next) => {
 });
 
 app.use("/dogs", require("./routes/canineRouter"));
-app.use("/walker", require("./routes/personRouter"));
+app.use("/walkers", require("./routes/walkerRouter"));
 
 mongoose.connect(process.env.MONGO_URL, () => {
   console.log("Connected to DB");

@@ -32,8 +32,6 @@ function SubmitDogForm() {
         console.log('Submitted')
     }
 
-    console.log(inputs)
-
     return (
         <>
             <div className="DogForm">

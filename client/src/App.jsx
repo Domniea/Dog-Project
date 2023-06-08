@@ -3,6 +3,7 @@ import {Routes, Route} from 'react-router-dom'
 import Home from './components/Home'
 import './App.css'
 import Dogs from './components/Dogs'
+import Schedule from './components/Schedule'
 import DogWalkers from './components/DogWalkers'
 import axios from "axios"
 import Nav from './components/Nav'
@@ -32,6 +33,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/dogs' element= { <Dogs /> } />
+        <Route path='/schedule' element= { <Schedule /> } />
         <Route path='/dogwalkers' element= { <DogWalkers /> } />
       </Routes>
       

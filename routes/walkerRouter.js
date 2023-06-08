@@ -1,10 +1,10 @@
 const express = require("express");
-const Person = require("../models/person");
-const personRouter = express.Router();
+const Walker = require("../models/person");
+const walkerRouter = express.Router();
 
 //GET All
-personRouter.get("/", (req, res, next) => {
-  Person.find((err, allData) => {
+walkerRouter.get("/", (req, res, next) => {
+  Walker.find((err, allData) => {
     if (err) {
       res.sendStatus(500);
       return next(err);
@@ -14,8 +14,8 @@ personRouter.get("/", (req, res, next) => {
 });
 
 //GET One
-personRouter.get("/:walkerId", (req, res, next) => {
-  Person.find({ _id: req.params.walkerId }, (err, walker) => {
+walkerRouter.get("/:walkerId", (req, res, next) => {
+  Walker.find({ _id: req.params.walkerId }, (err, walker) => {
     if (err) {
       res.sendStatus(500);
       return next(200);
@@ -25,8 +25,8 @@ personRouter.get("/:walkerId", (req, res, next) => {
 });
 
 //POST
-personRouter.post("/", (req, res, next) => {
-  const newWalker = new Person(req.body);
+walkerRouter.post("/", (req, res, next) => {
+  const newWalker = new Walker(req.body);
   newWalker.save((err, data) => {
     if (err) {
       res.sendStatus(500);
@@ -37,8 +37,8 @@ personRouter.post("/", (req, res, next) => {
 });
 
 //UPDATE
-personRouter.put("/:walkerId", (req, res, next) => {
-  Person.findOneAndUpdate(
+walkerRouter.put("/:walkerId", (req, res, next) => {
+  Walker.findOneAndUpdate(
     { _id: req.params.walkerId },
     req.body,
     { new: true },
@@ -53,8 +53,8 @@ personRouter.put("/:walkerId", (req, res, next) => {
 });
 
 //DELETE
-personRouter.delete("/:walkerId", (req, res, next) => {
-  Person.findByIdAndDelete({ _id: req.params.walkerId }, (err, walker) => {
+walkerRouter.delete("/:walkerId", (req, res, next) => {
+  Walker.findByIdAndDelete({ _id: req.params.walkerId }, (err, walker) => {
     if (err) {
       res.sendStatus(500);
       return next(err);
@@ -63,4 +63,4 @@ personRouter.delete("/:walkerId", (req, res, next) => {
   });
 });
 
-module.exports = personRouter;
+module.exports = walkerRouter;
