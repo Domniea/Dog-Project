@@ -34,13 +34,17 @@ function Dogs( props ) {
     }
     
     function deletePupper(pupperId) {
-        axios.delete 
+        axios.delete (`/api/dogs/${pupperId}`)
+            .then(res => setCanineList(prevState => {
+                return prevState.filter( dog => dog._id !== pupperId )
+            }))
     }
 
     const puppers = dogs.canineList.map( pupper => {
         return <DogCard 
             key={pupper._id}
             submit={editPupper}
+            deletePupper={deletePupper}
             {...pupper}
         />
     })

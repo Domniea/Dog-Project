@@ -13,6 +13,9 @@ function DogCard(props) {
 
     const dogs = useContext(DogList)
 
+    console.log(props)
+    const { deletePupper, _id } = props
+
     return (
         <div className="DogCard">
             { !editToggle ?
@@ -21,7 +24,10 @@ function DogCard(props) {
                     <h3>Breed: {props.breed}</h3>
                     <h3>Age: {props.age}</h3>
                     <h4>Rating: {props.rating}/10</h4>
-                    <button onClick={ () => setEditToggle( prevToggle => !prevToggle ) }>
+                    <button onClick={ () => deletePupper(_id)}>
+                        Delete
+                    </button>
+                    <button onClick={ () => toggle()}>
                         Edit
                     </button>
                 </>
@@ -32,6 +38,7 @@ function DogCard(props) {
                         editToggle={editToggle}
                         setEditToggle={setEditToggle}
                         toggle={toggle}
+                        
 
                     />
                     <button onClick={ () => setEditToggle( prevToggle => !prevToggle ) }>
