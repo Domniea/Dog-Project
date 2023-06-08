@@ -20,16 +20,23 @@ function DogCard(props) {
         <div className="DogCard">
             { !editToggle ?
                 <>
-                    <h2>Name: {props.name}</h2>
-                    <h3>Breed: {props.breed}</h3>
-                    <h3>Age: {props.age}</h3>
-                    <h4>Rating: {props.rating}/10</h4>
-                    <button onClick={ () => deletePupper(_id)}>
-                        Delete
-                    </button>
-                    <button onClick={ () => toggle()}>
-                        Edit
-                    </button>
+                    <div className="DogCard--layout">
+                        <div className="dogLeft dogInfo">
+                            <img src={props.imgUrl} />
+                        </div>
+                        <div className="dogRight dogInfo">
+                            <h2>Name: {props.name}</h2>
+                            <h3>Breed: {props.breed}</h3>
+                            <h3>Age: {props.age}</h3>
+                            <h4>Rating: {props.rating}/10</h4>
+                            <button onClick={ () => deletePupper(_id)}>
+                                Delete
+                            </button>
+                            <button onClick={ () => toggle()}>
+                                Edit
+                            </button>
+                        </div>
+                    </div>
                 </>
                 :
                 <>
@@ -38,8 +45,6 @@ function DogCard(props) {
                         editToggle={editToggle}
                         setEditToggle={setEditToggle}
                         toggle={toggle}
-                        
-
                     />
                     <button onClick={ () => setEditToggle( prevToggle => !prevToggle ) }>
                         Close

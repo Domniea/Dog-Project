@@ -15,7 +15,27 @@
   padding: 2%;
 }
 
+.DogCard--layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.dogInfo {
+  /* margin: 5%; */
+}
+
+.DogCard--layout > .dogLeft, .DogCard--layout > .dogRight  {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  width: 50%;
+}
+
+.DogCard--layout > .dogLeft > img {
+  border-radius: 10px;
+  height: 50vh;
+}
 /* *************************************** */
 
 header{
