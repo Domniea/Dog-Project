@@ -26,7 +26,6 @@ function DogWalkers( props ) {
     } )
 
 
-
     // function handleFilter( e ) {
     //         axios.get( `/api/dogs/search/walkdays?walkDays=${e.target.value}` )
     //         .then( res => canineList.setCanineList( res.data ) )
