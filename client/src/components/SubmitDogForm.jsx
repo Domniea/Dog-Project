@@ -6,7 +6,8 @@ import axios from "axios";
 function SubmitDogForm(props) {
 
     const dogs = useContext(DogList)
-    const { editToggle, toggle } = props
+    const { editToggle, toggle, submit } = props
+
     const initInputs ={
         name: props.name || '',
         breed: props.breed || '',
@@ -17,7 +18,7 @@ function SubmitDogForm(props) {
 
     const [inputs, setInputs] = useState(initInputs)
 
-    const { submit } = props
+
 
     function handleChange(e) {
         e.preventDefault()
@@ -79,6 +80,7 @@ function SubmitDogForm(props) {
                         placeholder="Day to walk your dog"
                     />
                     <button>Submit</button>
+                    
                 </form>
 
             </div>
