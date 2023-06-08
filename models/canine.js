@@ -3,24 +3,30 @@ const Schema = mongoose.Schema;
 
 const canineSchema = new Schema({
     name: {
-        type: String
+        type: String,
+        trim: true
     },
     breed: {
-        type: String
+        type: String,
+        trim: true,
     },
     age: {
-        type: String
+        type: String,
+        trim: true,
     },
     rating: {
-        type: Number
+        type: Number,
+        trim: true,
     },
     walkDays: {
-        type: String,
+        type: String,,
+        trim: true,
         enum: [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ]
 
     },
     imgUrl: {
-        type: String
+        type: String,
+        trim: true,
     }
 })
 
