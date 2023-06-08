@@ -2,13 +2,13 @@
 import { useState } from "react";
 import axios from "axios";
 
-function SubmitDogForm() {
+function SubmitDogForm(props) {
     const initInputs ={
-        name: '',
-        breed: '',
-        age: '',
-        rating: '',
-        walkDays: ""
+        name: props.name || '',
+        breed: props.breed || '',
+        age: props.age || '',
+        rating: props.rating || '',
+        walkDays: props.walkDays || ""
     }
 
     const [inputs, setInputs] = useState(initInputs)
@@ -62,7 +62,7 @@ function SubmitDogForm() {
                         name="rating" 
                         value={inputs.rating}
                         onChange={handleChange}
-                        placeholder="About your dog!"
+                        placeholder="(Traning Level) /10"
                     />
                     <input 
                         type="text" 

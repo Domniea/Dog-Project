@@ -21,7 +21,7 @@ const canineSchema = new Schema({
     walkDays: {
         type: String,
         trim: true,
-        enum: [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ]
+        // enum: [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ]
 
     },
     imgUrl: {
