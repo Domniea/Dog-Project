@@ -5,9 +5,8 @@ import SubmitDogForm from './SubmitDogForm'
 
 
 function Dogs( props ) {
+
     const dogs = useContext(DogList)
-    
-    console.log(dogs)
 
     const puppers = dogs.canineList.map( pupper => {
         return <DogCard 
@@ -26,8 +25,8 @@ function Dogs( props ) {
                     <h1>List of Adorable Dogs</h1>
                 </header>
                 <SubmitDogForm />
+                { puppers }
             </div>
-            { puppers }
         </>
     )
 }
