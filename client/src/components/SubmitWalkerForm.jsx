@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import axios from 'axios'
 
-const SubmitWalker = () => {
+const SubmitWalkerForm = () => {
     const initInputs ={
         name: '',
         age: '',
@@ -29,8 +29,6 @@ const SubmitWalker = () => {
             .catch(err => console.log(err))
         console.log('Submitted')
     }
-
-    console.log(inputs)
 
     return (
         <>
@@ -74,4 +72,4 @@ const SubmitWalker = () => {
   
 
 
-export default SubmitWalker
+export default SubmitWalkerForm

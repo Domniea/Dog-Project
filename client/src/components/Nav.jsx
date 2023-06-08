@@ -9,6 +9,9 @@ export default function Nav() {
             <Link className="links" to='/dogs' style={{padding: 5}}>
               Dogs
             </Link>
+            <Link className="links" to='/schedule' style={{padding: 5}}>
+              Schedule
+            </Link>
             <Link className="links" to='/dogwalkers' style={{padding: 5}}>
               Dog Walkers
             </Link>
