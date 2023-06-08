@@ -7,15 +7,11 @@ function DogCard(props) {
 
     const [ editToggle, setEditToggle ] = useState(false)
     
-    const dogs = useContext(DogList)
-
-    function editPupper( updates, pupperId ) {
-        axios.put( `/api/dogs/${pupperId}`, updates )
-        .then( res => {
-            dogs.setCanineList( prevDogs => prevDogs.map( dog => movie._id !== pupperId ? dog : res.data ) )
-        })
-        .catch( err => console.log( err ))
+    function toggle() {
+        setEditToggle(prevState => !prevState)
     }
+
+    const dogs = useContext(DogList)
 
     return (
         <div className="DogCard">
@@ -31,14 +27,11 @@ function DogCard(props) {
                 </>
                 :
                 <>
-                    <SubmitDogForm 
-                        name={ props.name } 
-                        breed={ props.breed }   
-                        age={ props.age }
-                        rating={ props.rating }
-                        walkDays={props.walkDays}
-                        _id={ props._id }
-                        submit={ 'submitTEst'}
+                    <SubmitDogForm
+                        {...props}
+                        editToggle={editToggle}
+                        setEditToggle={setEditToggle}
+                        toggle={toggle}
 
                     />
                     <button onClick={ () => setEditToggle( prevToggle => !prevToggle ) }>

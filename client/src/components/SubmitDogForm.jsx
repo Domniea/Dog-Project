@@ -1,8 +1,12 @@
 
-import { useState } from "react";
+import { useState, useContext} from "react";
+import { DogList } from "../context/DogListContext";
 import axios from "axios";
 
 function SubmitDogForm(props) {
+
+    const dogs = useContext(DogList)
+    const { editToggle, toggle } = props
     const initInputs ={
         name: props.name || '',
         breed: props.breed || '',
@@ -12,6 +16,8 @@ function SubmitDogForm(props) {
     }
 
     const [inputs, setInputs] = useState(initInputs)
+
+    const { submit } = props
 
     function handleChange(e) {
         e.preventDefault()
@@ -26,9 +32,10 @@ function SubmitDogForm(props) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        axios.post('/api/dogs', inputs)
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
+        submit(inputs, props._id)
+        if(editToggle) {
+            toggle()
+        }
         console.log('Submitted')
     }
 
