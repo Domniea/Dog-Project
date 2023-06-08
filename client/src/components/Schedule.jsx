@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState, useContext } from 'react'
 import { DogList } from '../context/DogListContext'
 import DogCard from './DogCard'
@@ -7,16 +7,21 @@ import axios from 'axios'
 function Schedule() {
     
     const dogs = useContext(DogList)
-    // console.log(dogs.canineList)
+    
     const [walkDayView, setWalkDayView] = useState(dogs.canineList)
 
+    useEffect(()=> {
+        axios.get('/api/dogs')
+            .then(res => setWalkDayView(res.data))
+            .catch(err => console.log(err))
+    }, [])
     // console.log(walkDayView)
 
     const [inputs,setInputs] = useState({
         search: ''
     })
 
-    const puppers = dogs.canineList.map( pupper => {
+    const puppers = walkDayView.map( pupper => {
     return <DogCard 
         key={pupper._id}
         {...pupper}
@@ -41,7 +46,7 @@ function Schedule() {
         axios.get( `/api/dogs/search/walkdays?walkdays=${inputs.search}` )
             .then( res => {
                 // console.log(res.data)
-                dogs.setCanineList( res.data )
+                setWalkDayView( res.data )
             } )
             .catch( err => console.log( err ) )
     }
@@ -71,7 +76,7 @@ function Schedule() {
                         name="search"
                         value={inputs.search}
                         onChange={handleChange}
-                        placeholder="Who Needs A Walk?"
+                        placeholder="Monday?"
                     />
                     <button>Submit</button>
                 </form>
