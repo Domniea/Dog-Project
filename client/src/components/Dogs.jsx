@@ -27,18 +27,14 @@ function Dogs( props ) {
 
     function editPupper( updates, pupperId ) {
         axios.put( `/api/dogs/${pupperId}`, updates )
-        .then( res => {
-            dogs.setCanineList( prevDogs => prevDogs.map( dog => dog._id !== pupperId ? dog : res.data ) )
-        })
-        .catch( err => console.log( err ))
+            .then( res => {
+                dogs.setCanineList( prevDogs => prevDogs.map( dog => dog._id !== pupperId ? dog : res.data ) )
+            })
+            .catch( err => console.log( err ))
     }
     
-    function handleSubmit(e) {
-        e.preventDefault()
-        axios.post('/api/dogs', inputs)
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
-        console.log('Submitted')
+    function deletePupper(pupperId) {
+        axios.delete 
     }
 
     const puppers = dogs.canineList.map( pupper => {
