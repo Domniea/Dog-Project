@@ -22,20 +22,35 @@
   align-items: center;
 }
 
-.dogInfo {
-  /* margin: 5%; */
-}
-
 .DogCard--layout > .dogLeft, .DogCard--layout > .dogRight  {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   width: 50%;
 }
 
 .DogCard--layout > .dogLeft > img {
   border-radius: 10px;
   height: 50vh;
+}
+
+.homepage--header > h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 10vh;
+  margin: 2%;
+}
+
+
+.homepage--description {
+  font-size: 5vh;
+  margin: 3%;
+}
+
+.homepage--ratings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
+  font-size: 4vh;
+  
 }
 /* *************************************** */
 
