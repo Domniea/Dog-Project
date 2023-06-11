@@ -27,9 +27,9 @@ function Homepage() {
                     <img className='homepage--ratings--img img4' style={{height: '30vh'}} src="https://wunderdogmagazine.com/wp-content/uploads/elementor/thumbs/Wunderdog-logo-q76g8v0cv5kt8extyzw9y4kua5zkaru1rfyw5bq8lk.png"></img>
                 </div>
                 <div>
-                    <h7>
+                    <h3>
                         Coming to a town near you.
-                    </h7>
+                    </h3>
                 </div>
             </div>
         </div>

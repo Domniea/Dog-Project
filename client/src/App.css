@@ -213,7 +213,7 @@ button {
   }
 
   .homepage--img {
-    height: 50vh
+    height: 40vh
   }
 
   .canineImg {
@@ -261,9 +261,9 @@ button {
   .canineImg {
     width: 25vh;
   }
-
   .homepage--img {
-    height: 40vh;
+    width: 50vh;
+    height: 32vh;
   }
 
   .homepage--ratings--img {
@@ -291,7 +291,15 @@ button {
 
 }
 
-@media screen and (max-width: 425px) {
+/* @media screen and (max-width: 500) {
+
+ .App {
+  background-color: purple
+}
+
+} */
+
+@media screen and (max-width: 428px) {
   html{
     font-size: 7px;
   }
@@ -301,7 +309,8 @@ button {
   }
 
   .homepage--img {
-    height: 25vh
+    width: 35vh;
+    height: 28vh;
   }
 
   .canineImg {
