@@ -21,7 +21,7 @@ function Homepage() {
                 <div className='homepage--ratings'>
                     <h2>Featured in:</h2>
                     <br></br>
-                    <img className='homepage--ratings--img' style={{height: '10vh'}} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/NewYorkTimes.svg/2560px-NewYorkTimes.svg.png"></img>
+                    <img className='homepage--ratings--img img1' style={{height: '10vh'}} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/NewYorkTimes.svg/2560px-NewYorkTimes.svg.png"></img>
                     <img className='homepage--ratings--img img2' style={{height: '16vh'}} src="https://cdn.shopify.com/s/files/1/0012/3056/9532/files/modern-dog-magazine_250x_crop_top@2x.png?v=1613561743"></img>
                     <img className='homepage--ratings--img img3' style={{height: '30vh'}} src="https://www.workingdogmagazine.com/wp-content/uploads/2019/03/WorkingDogPatch.jpg"></img>
                     <img className='homepage--ratings--img img4' style={{height: '30vh'}} src="https://wunderdogmagazine.com/wp-content/uploads/elementor/thumbs/Wunderdog-logo-q76g8v0cv5kt8extyzw9y4kua5zkaru1rfyw5bq8lk.png"></img>
