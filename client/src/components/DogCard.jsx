@@ -22,7 +22,7 @@ function DogCard(props) {
                 <>
                     <div className="DogCard--layout">
                         <div className="dogLeft dogInfo">
-                            <img src={props.imgUrl} />
+                            <img className='canineImg' src={props.imgUrl} />
                         </div>
                         <div className="dogRight dogInfo">
                             <h2>Name: {props.name}</h2>

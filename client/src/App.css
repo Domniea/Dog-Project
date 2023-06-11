@@ -1,11 +1,20 @@
 * {
-  box-sizing:border-box;
+  box-sizing: border-box;
   font-family: 'Oswald', sans-serif;
   margin: 0;
   padding: 0;
   color: #333;
   text-align: center;
+}
 
+html {
+  width: 100%;
+  font-size: 16px;
+}
+
+
+.homepage--img {
+  height: 60vh
 }
 
 .DogCard, .WalkerCard {
@@ -26,20 +35,20 @@
   width: 50%;
 }
 
-.DogCard--layout > .dogLeft > img {
+.canineImg{
   border-radius: 10px;
-  height: 50vh;
+  width: 50vh;
 }
 
 .homepage--header > h1 {
   font-family: 'Great Vibes', cursive;
-  font-size: 10vh;
+  font-size: 4.5em;
   margin: 2%;
 }
 
 
 .homepage--description {
-  font-size: 5vh;
+  font-size: 2em;
   margin: 3%;
 }
 
@@ -49,8 +58,7 @@
   justify-content: center;
   align-items: center;
   margin: 5%;
-  font-size: 4vh;
-  
+  font-size: 1.5emvh;
 }
 /* *************************************** */
 
@@ -64,6 +72,9 @@ h1 {
   color: #01BF8F;
 }
 
+Nav {
+  width: 100%;
+}
 nav {
   background-color: #F9AA43;
   text-align: center;
@@ -73,18 +84,20 @@ nav {
 .links {
   text-decoration: none;
   color: whitesmoke;
-  font-size: 40px;
+  font-size: 2em;
   font-weight: 600;
   cursor:pointer;
+  padding: 3vh
 }
-.links:hover {
-  font-size: 23px;
+/* .links:hover {
+  font-size: 1.5em;
   transition: all .3s ease-in-out;
-}
+} */
 
 h2 {
-  margin: 5px;
+  margin: .5%;
 }
+
 .Home{
   background-color: #F2F2F2;
   max-height: max-content;
@@ -92,7 +105,7 @@ h2 {
 .home-header{
   padding:20px;
 }
-.intro {
+/* .intro {
   margin-top: 10px;
   margin-left: 150px;
   margin-right: 150px;
@@ -100,36 +113,37 @@ h2 {
   font-size: 30px;
   line-height: 2;
   height: 1000px;
-}
+} */
+
 p {
-  margin: 5px;
+  margin: .5%;
 }
 
 form {
   text-align: center;
   display:inline-block;
-  width: 1250px;
+  width: 75%;
   background-color: #01bf8fae;
   border: 4px solid #01BF8F;
-  padding: 10px;
-  margin: 5px;
+  padding: 1.5%;
+  margin: .5%;
   border-radius: 10px;
 }
 
 input {
-  padding: 10px;
-  font-size: 16px;
+  padding: 1%;
+  font-size: 1em;
   border: 1px solid #333;
   border-radius: 10px;
-  margin: 5px;
+  margin: .5%;
 }
 
 button {
-  width:100px;
-  margin: 3px;
-  padding: 5px;
+  width:11vh;
+  margin: .5%;
+  padding: .5%;
   border-radius: 4px;
-  font-size: 18px;
+  font-size: 1.2em;
   color:#01BF8F;
   font-weight: 400;
 }
@@ -153,15 +167,125 @@ button {
   width: 200px;
 }
 
+@media screen and (max-width: 900px) {
 
-/* .fugitiveContainer {
-  display: flex;
-  flex-direction: column;
-  margin: 0 32px;
+  nav {
+    width: 100%;
+  }
+
+  .canineImg {
+    width: 40vh;
+  }
+
+
+
 }
 
-.fugitive {
-  border: 1px solid #333;
-  padding: 10px;
-  margin: 5px;
-} */
+@media screen and (max-width: 700px) {
+  html{
+    font-size: 15px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .homepage--img {
+    height: 50vh
+  }
+
+  .canineImg {
+    width: 30vh;
+  }
+
+  .homepage--ratings--img {
+    height: 20vh;
+  }
+
+}
+
+@media screen and (max-width: 580px) {
+  html{
+    font-size: 10px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .homepage--header {
+    margin: 5%;
+  }
+
+  .canineImg {
+    width: 25vh;
+  }
+
+  .homepage--img {
+    height: 40vh;
+  }
+
+  .homepage--ratings--img {
+    width: 90%;
+  }
+
+.img2 {
+  width: 75%;
+}
+
+  .img3{
+    width:45%
+  }
+
+  .img4{
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+  html{
+    font-size: 7px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .homepage--img {
+    height: 25vh
+  }
+
+  .canineImg {
+    width: 20vh;
+  }
+
+  .homepage--ratings--img {
+    width: 80%;
+  }
+
+.img2 {
+  width: 65%;
+}
+
+  .img3{
+    width:35%;
+  }
+
+  .img4{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 350px) {
+  html{
+    font-size: 5px;
+  }
+
+  nav {
+    width: 100%;
+  }
+  
+  .canineImg {
+    width: 15vh;
+  }
+}
