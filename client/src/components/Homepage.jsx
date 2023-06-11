@@ -4,7 +4,7 @@ function Homepage() {
     return (
         <div className="Homepage">
             <div className='homepage--header'>
-                <h1>Happy Hydrent</h1>
+                <h1>Happy Hydrant</h1>
                 <h1 style={{fontSize: '2em', marginTop: '-2%'}}>Dog Walking Co.</h1>
             </div>
             <img className='homepage--img' src="https://www.lawnstarter.com/blog/wp-content/uploads/2022/01/rsz_shutterstock_2051387972.jpg" alt="" />
