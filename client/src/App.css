@@ -313,8 +313,8 @@ button {
   }
 
   .img1 {
-    width: 80%;
-    max-height: 100px;
+    width: 60%;
+    /* max-height: 80; */
   }
 
   .img2 {
