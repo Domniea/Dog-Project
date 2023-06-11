@@ -5,6 +5,9 @@ const mongoose = require("mongoose");
 mongoose.set("strictQuery", true);
 require("dotenv").config(); // Angie added .env to hide port and URL and password
 
+mongoose.connect(`${process.env.MONGO_URL}`, () => {
+  console.log("Connected to DB");
+});
 //Middleware
 app.use(express.json());
 app.use(morgan("dev"));
@@ -18,9 +21,6 @@ app.use((err, req, res, next) => {
 app.use("/dogs", require("./routes/canineRouter"));
 app.use("/walkers", require("./routes/walkerRouter"));
 
-mongoose.connect(process.env.MONGO_URL, () => {
-  console.log("Connected to DB");
-});
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is active on port: ${process.env.PORT}`);
