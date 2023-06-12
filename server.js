@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 mongoose.set("strictQuery", true);
 require("dotenv").config(); // Angie added .env to hide port and URL and password
 
-mongoose.connect(`${process.env.MONGO_URL}`, () => {
+mongoose.connect(`https://dog-walker-project.herokuapp.com`, () => {
   console.log("Connected to DB");
 });
 //Middleware
