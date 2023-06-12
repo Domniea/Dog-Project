@@ -8,7 +8,7 @@ function WalkerListProvider (props) {
     const [staffList, setStaffList] = useState([])
     
     function getAllStaff() {
-        axios.get('https://dog-walker-project.herokuapp.com/dogs/walkers')
+        axios.get('https://dog-walker-project.herokuapp.com/walkers')
             .then(res => setStaffList(res.data))
             .catch(err => console.log(err))
     }
