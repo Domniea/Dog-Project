@@ -1,12 +1,15 @@
-import {useState} from 'react'
-import axios from 'axios'
+import { useState, useContext } from 'react'
+import { WalkerList } from '../context/WalkerListContext'
 
-const SubmitWalkerForm = () => {
+function SubmitWalkerForm(props) {
+
+    const { editToggle, toggle, submit, _id } = props
+
     const initInputs ={
-        name: '',
-        age: '',
-        rating: '',
-        contact: ''
+        name: props.name || '',
+        age: props.age || '',
+        rating: props.rating || '',
+        contact: props.contact || ''
     }
 
     const [inputs, setInputs] = useState(initInputs)
@@ -24,9 +27,10 @@ const SubmitWalkerForm = () => {
 
     function handleSubmit(e) {
         e.preventDefault()
-        axios.post('/api/walker', inputs)
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
+        submit(inputs, _id)
+        if(editToggle) {
+            toggle()
+        }
         console.log('Submitted')
     }
 

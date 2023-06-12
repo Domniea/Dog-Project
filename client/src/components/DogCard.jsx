@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import SubmitDogForm from "./SubmitDogForm";
-import { DogList } from "../context/DogListContext";
-import axios from 'axios'
+
 
 function DogCard(props) {
 
@@ -10,8 +9,6 @@ function DogCard(props) {
     function toggle() {
         setEditToggle(prevState => !prevState)
     }
-
-    const dogs = useContext(DogList)
 
     const { deletePupper, _id } = props
 
