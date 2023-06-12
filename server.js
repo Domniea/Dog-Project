@@ -18,6 +18,13 @@ app.use((err, req, res, next) => {
   return res.send({ errMsg: err.message });
 });
 
+
+//Routes
+
+app.get('/', (req, res, next) => {
+  res.sendStatus(200).send('Welcome to the server')
+})
+
 app.use("/dogs", require("./routes/canineRouter"));
 app.use("/walkers", require("./routes/walkerRouter"));
 
