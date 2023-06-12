@@ -9,8 +9,8 @@ function DogListProvider (props) {
     const [canineList, setCanineList] = useState([])
     
     function getAllDogs() {
-        axios.get('https://dog-walker-project.herokuapp.com/dogs')
-            .then(res => setCanineList(res))
+        axios.get('/api/dogs')
+            .then(res => setCanineList(res.data))
             .catch(err => console.log(err))
     }
 
