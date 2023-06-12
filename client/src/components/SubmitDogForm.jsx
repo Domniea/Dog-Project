@@ -31,6 +31,14 @@ function SubmitDogForm(props) {
     function handleSubmit(e) {
         e.preventDefault()
         submit(inputs, _id)
+        setInputs({
+            name: '',
+        breed: '',
+        age: '',
+        rating: '',
+        walkDays: '',
+        imgUrl: ''
+        })
         if(editToggle) {
             toggle()
         }

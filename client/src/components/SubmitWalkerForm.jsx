@@ -28,6 +28,9 @@ function SubmitWalkerForm(props) {
     function handleSubmit(e) {
         e.preventDefault()
         submit(inputs, _id)
+        setInputs({
+            
+        })
         if(editToggle) {
             toggle()
         }
