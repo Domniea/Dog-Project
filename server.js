@@ -22,7 +22,7 @@ app.use((err, req, res, next) => {
 //Routes
 
 app.get('/', (req, res, next) => {
-  res.sendStatus(200).send('Welcome to the server')
+  return res.send('Welcome to the server')
 })
 
 app.use("/dogs", require("./routes/canineRouter"));
