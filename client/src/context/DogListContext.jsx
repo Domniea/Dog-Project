@@ -10,7 +10,7 @@ function DogListProvider (props) {
     
     function getAllDogs() {
         axios.get('https://dog-walker-project.herokuapp.com/dogs')
-            .then(res => setCanineList(res.data))
+            .then(res => setCanineList(res))
             .catch(err => console.log(err))
     }
 
