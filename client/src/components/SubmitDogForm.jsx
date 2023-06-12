@@ -14,7 +14,7 @@ function SubmitDogForm(props) {
         age: props.age || '',
         rating: props.rating || '',
         walkDays: props.walkDays || "",
-        imgUrl: ''
+        imgUrl: props.imgUrl || ''
     }
 
     const [inputs, setInputs] = useState(initInputs)
