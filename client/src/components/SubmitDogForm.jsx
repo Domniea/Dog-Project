@@ -1,12 +1,10 @@
-
 import { useState, useContext} from "react";
-import { DogList } from "../context/DogListContext";
-import axios from "axios";
+// import { DogList } from "../context/DogListContext";
 
 function SubmitDogForm(props) {
 
-    const dogs = useContext(DogList)
-    const { editToggle, toggle, submit } = props
+    // const dogs = useContext(DogList)
+    const { editToggle, toggle, submit, _id } = props
 
     const initInputs ={
         name: props.name || '',
@@ -14,12 +12,10 @@ function SubmitDogForm(props) {
         age: props.age || '',
         rating: props.rating || '',
         walkDays: props.walkDays || "",
-        imgUrl: ''
+        imgUrl: props.imgUrl || ''
     }
 
     const [inputs, setInputs] = useState(initInputs)
-
-
 
     function handleChange(e) {
         e.preventDefault()
@@ -34,7 +30,7 @@ function SubmitDogForm(props) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        submit(inputs, props._id)
+        submit(inputs, _id)
         if(editToggle) {
             toggle()
         }

@@ -11,7 +11,7 @@ function Schedule() {
     const [walkDayView, setWalkDayView] = useState(dogs.canineList)
 
     useEffect(()=> {
-        axios.get('/api/dogs')
+        axios.get('https://dog-walker-project.herokuapp.com/dogs')
             .then(res => setWalkDayView(res.data))
             .catch(err => console.log(err))
     }, [])
@@ -43,7 +43,7 @@ function Schedule() {
     function handleSubmit(e) {
         e.preventDefault()
         console.log(inputs.search)
-        axios.get( `/api/dogs/search/walkdays?walkdays=${inputs.search}` )
+        axios.get( `https://dog-walker-project.herokuapp.com/dogs/search/walkdays?walkdays=${inputs.search}` )
             .then( res => {
                 // console.log(res.data)
                 setWalkDayView( res.data )

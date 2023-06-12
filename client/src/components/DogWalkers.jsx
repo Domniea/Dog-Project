@@ -8,29 +8,46 @@ import SubmitWalker from './SubmitWalkerForm'
 
 function DogWalkers( props ) {
     
-    // const dogs = useContext(DogList)
     const staff = useContext(WalkerList)
 
-    // const puppers = dogs.canineList.map( pupper => {
-    //     return <DogCard 
-    //     key={pupper._id}
-    //     {...pupper}
-    //     />
-    // } )
+    const { staffList, setStaffList} = staff 
 
-    const walker = staff.staffList.map( person => {
+    function postStaff(pupperInfo) {
+        axios.post('https://dog-walker-project.herokuapp.com/walkers', pupperInfo)
+        .then(res => {
+            setStaffList(prevState => {
+                return [
+                    ...prevState,
+                    res.data
+                ]
+            })
+        })
+        .catch(err => console.log(err))
+    }
+
+    function editStaff( updates, staffId ) {
+        axios.put( `https://dog-walker-project.herokuapp.com/dogs/${staffId}`, updates )
+            .then( res => {
+                setStaffList( prevStaff => prevStaff.map( employee => employee._id !== staffId ? employee : res.data ) )
+            })
+            .catch( err => console.log( err ))
+    }
+
+    function deleteStaff(staffId) {
+        axios.delete (`https://dog-walker-project.herokuapp.com/dogs/${staffId}`)
+            .then(res => setCanineList(prevState => {
+                return prevState.filter( employee => employee._id !== staffId )
+            }))
+    }
+
+    const walker = staffList.map( person => {
         return <WalkerCard 
         key={person._id}
+        submit={editStaff}
+        deleteStaff={deleteStaff}
         {...person}
         />
     } )
-
-
-    // function handleFilter( e ) {
-    //         axios.get( `/api/dogs/search/walkdays?walkDays=${e.target.value}` )
-    //         .then( res => canineList.setCanineList( res.data ) )
-    //         .catch( err => console.log( err ) )
-    // }
 
     return (
         <>
@@ -38,10 +55,11 @@ function DogWalkers( props ) {
 
                 <header>
                     <h1>Available Dog Walkers</h1>
-                    {/* <h1>List of Dogs that Need to be Walked</h1> */}
                 </header>
 
-                <SubmitWalker />
+                <SubmitWalker 
+                    submit={postStaff}
+                />
 {/* 
                 <h4>Filter by Walk Days</h4>
                 <select onChange={handleFilter}>
@@ -52,10 +70,7 @@ function DogWalkers( props ) {
                     <option value="Thursday">Thursday</option>
                     <option value="Friday">Friday</option>
                 </select> */}
-
-
-
-                {/* {puppers} */}
+                
                 { walker}
                 
             </div>

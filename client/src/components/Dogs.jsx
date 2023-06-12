@@ -13,7 +13,7 @@ function Dogs( props ) {
 
     
     function postPupper(pupperInfo) {
-        axios.post('/api/dogs', pupperInfo)
+        axios.post('https://dog-walker-project.herokuapp.com/dogs', pupperInfo)
         .then(res => {
             setCanineList(prevState => {
                 return [
@@ -26,21 +26,21 @@ function Dogs( props ) {
     }
 
     function editPupper( updates, pupperId ) {
-        axios.put( `/api/dogs/${pupperId}`, updates )
+        axios.put( `https://dog-walker-project.herokuapp.com/dogs/${pupperId}`, updates )
             .then( res => {
-                dogs.setCanineList( prevDogs => prevDogs.map( dog => dog._id !== pupperId ? dog : res.data ) )
+                setCanineList( prevDogs => prevDogs.map( dog => dog._id !== pupperId ? dog : res.data ) )
             })
             .catch( err => console.log( err ))
     }
     
     function deletePupper(pupperId) {
-        axios.delete (`/api/dogs/${pupperId}`)
+        axios.delete (`https://dog-walker-project.herokuapp.com/dogs/${pupperId}`)
             .then(res => setCanineList(prevState => {
                 return prevState.filter( dog => dog._id !== pupperId )
             }))
     }
 
-    const puppers = dogs.canineList.map( pupper => {
+    const puppers = canineList.map( pupper => {
         return <DogCard 
             key={pupper._id}
             submit={editPupper}
