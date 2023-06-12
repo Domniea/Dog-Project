@@ -4,7 +4,7 @@ const canineRouter = express.Router()
 
 
 //GET All
-canineRouter.get('https://dog-walker-project.herokuapp.com/', ( req, res, next) => {
+canineRouter.get('/', ( req, res, next) => {
     Canine.find((err, allData) => {
         if(err){
             res.sendStatus(500)
