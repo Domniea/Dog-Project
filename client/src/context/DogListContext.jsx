@@ -10,7 +10,10 @@ function DogListProvider (props) {
     
     function getAllDogs() {
         axios.get('/api/dogs')
-            .then(res => setCanineList(res.data))
+            .then(res => {
+                console.log(res)
+                setCanineList(res.data)
+            })
             .catch(err => console.log(err))
     }
 

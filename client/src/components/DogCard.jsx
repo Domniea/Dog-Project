@@ -13,7 +13,6 @@ function DogCard(props) {
 
     const dogs = useContext(DogList)
 
-    console.log(props)
     const { deletePupper, _id } = props
 
     return (
