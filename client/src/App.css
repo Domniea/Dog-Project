@@ -22,7 +22,7 @@ html {
   border-radius: 15px;
   margin: 5%;
   padding: 2%;
-  box-shadow: 2vh 2vh #00987259;
+  box-shadow: 2vw 2vh #00987259;
 }
 
 .DogCard--layout {
@@ -171,6 +171,10 @@ button {
 
   nav {
     width: 100%;
+  }
+
+  .DogCard, .WalkerCard {
+    box-shadow: 1vh 1vw rgba(27, 33, 27, 0.518);
   }
 
   .canineImg {
