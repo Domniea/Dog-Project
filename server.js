@@ -42,6 +42,10 @@ app.use(morgan("dev"));
       )
     })
   
+  app.all('/', function (req, res) {
+    res.status(200).sendFile(`/`, {root: `${client}/dist`});
+  });
+
   app.use("/dogs", require("./routes/canineRouter"));
   app.use("/walkers", require("./routes/walkerRouter"));
     
