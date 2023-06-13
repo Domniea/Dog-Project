@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {Routes, Route} from 'react-router-dom'
+import {Routes, Route, useNavigate} from 'react-router-dom'
 import Homepage from './components/Homepage'
 import './App.css'
 import Dogs from './components/Dogs'
@@ -19,6 +19,7 @@ function App() {
         <Route path='/dogs' element= { <Dogs /> } />
         <Route path='/schedule' element= { <Schedule /> } />
         <Route path='/dogwalkers' element= { <DogWalkers /> } />
+        <Route path="/*" element={<Homepage />}/>
       </Routes>
       
     </>
