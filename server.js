@@ -1,9 +1,11 @@
 const express = require("express");
 const app = express();
+const{express: jwt} = require('express-jwt')
+
 const morgan = require("morgan");
 const cors = require('cors')
 const mongoose = require("mongoose");
-const { options } = require("./routes/canineRouter");
+// const { options } = require("./routes/canineRouter");
 mongoose.set("strictQuery", true);
 require("dotenv").config(); // Angie added .env to hide port and URL and password
 
